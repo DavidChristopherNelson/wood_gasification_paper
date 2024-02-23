@@ -1,4 +1,6 @@
 # wood_gasification_paper
 This is the supplementary material for the paper titled "Wood Gasification: A Promising Strategy to Extend Fuel Reserves After Global Catastrophic Electricity Loss".
 
-Each of the plots in the paper are generated from running the Python script that is associated with it. These plots read data from the Numbers spreadsheet so make sure to have that in the same folder as the Python script. The plot will be displayed in a pop up and also saved to the folder that the script is from. 
+Each of the plots in the paper are generated from running the Python script that is associated with it. These plots read data from the Numbers spreadsheet so make sure that the path to the spreadsheet is correct in the Python scripts. The plot will be displayed in a pop up and also saved to the folder that the script is from.
+
+Monte Carlo analysis was used to propagate uncertainties through the calculations. This was done in two steps. The first step involves writing Gaussian distributed samples to the spreadsheet input parameters and read the corresponding values for the relevant outputs. This is performed by the script 'monte_carlo_generate_sample_data.py' which saves data into 'monte_carlo_samples.txt' in such a way that if the program crashes or is stopped that data won't be lost. The second step is to calculate the confidence interval from these samples of the outputs and write the 90% confidence interval in the spreadsheet. This is done by 'monte_carlo_calculate_uncertainty_from_data.py'. 
